@@ -14,6 +14,7 @@
 #include <cstring>
 #include <fstream>
 #include <string>
+#include <tuple>
 #include <vector>
 
 #define CUDA_CHECK(call)                                                                 \
@@ -139,7 +140,11 @@ int main(int argc, char** argv) {
     CUDA_CHECK(cudaEventCreate(&ev0));
     CUDA_CHECK(cudaEventCreate(&ev1));
 
-    for (auto [B, K, N] : triples) {
+    // Use std::get (not structured bindings) for nvcc compatibility on some toolkits (e.g. Colab).
+    for (const auto& t : triples) {
+        const int B = std::get<0>(t);
+        const int K = std::get<1>(t);
+        const int N = std::get<2>(t);
         const int m = B;
         const int k = K;
         const int n = N;

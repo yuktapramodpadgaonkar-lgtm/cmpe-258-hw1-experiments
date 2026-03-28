@@ -83,6 +83,7 @@ Data is **synthetic** (random or constant tensors) for **performance measurement
 
 - **Concepts and requirements walkthrough:** [EXPLICATION.md](EXPLICATION.md)
 - **Colab and AWS (including quota and regions):** [RUNNING_COLAB_AWS.md](RUNNING_COLAB_AWS.md)
+- **Colab step-by-step (clone, cells, download):** [COLAB_GUIDE.md](COLAB_GUIDE.md)
 
 ---
 
